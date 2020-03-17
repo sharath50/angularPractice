@@ -5,7 +5,12 @@
       <!-- <app-basic></app-basic> -->
     </div>
     <div class="col">
-      <!-- <app-binding></app-binding> -->
+      <app-binding
+        [otherItems]="forBinding"
+        [requiredItems]="forBinding2"
+        (delete)="onDeleteFromBinding($event)"
+        (updateRequest)="onUpdateFromBinding($event)"
+      ></app-binding>
     </div>
   </div>
   <div class="row">
@@ -18,7 +23,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <app-favorite></app-favorite>
+      <!-- <app-favorite></app-favorite> -->
     </div>
     <div class="col"></div>
   </div>

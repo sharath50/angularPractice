@@ -1,3 +1,4 @@
+import { FavoriteDirective } from "./myComponents/builtInDirectives/favorite.directive";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
@@ -23,14 +24,15 @@ import { serviceOneService } from "./services/serviceOne.service";
     builtInDirectivesComponent,
     SummaryPipe,
     FavoriteComponent,
-    MainComponent
+    MainComponent,
+    FavoriteDirective
   ], // to make all component availabe to the module that are not from other modules
   imports: [
     BrowserModule, // we need to use browser module because we are building browser base application
     // it gives us the ability to work with DOM and etc...
     FormsModule //
   ], // to import other modules from the app
-  providers: [serviceOneService], //
-  bootstrap: [AppComponent] // indicates starting point of the app
+  providers: [serviceOneService], // includes services
+  bootstrap: [AppComponent] // indicates list of components as starting point of the app
 })
 export class AppModule {} // the name for module
