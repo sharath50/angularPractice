@@ -1,0 +1,87 @@
+<div class="card p-2">
+  <h3 class="h3">{{ title }}</h3>
+  <!-- here is multiple style binding in angular -->
+  <p [ngStyle]="{ color: 'orange', 'background-color': 'yellow' }">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, doloremque.
+  </p>
+
+  <p
+    [ngStyle]="{
+      'border-radius.px': '10',
+      'padding.px': padd,
+      'background-color': bc2
+    }"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, doloremque.
+  </p>
+
+  <p [ngStyle]="cStyles">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, doloremque.
+  </p>
+
+  <!-- here is multiple class binding in angular -->
+  <p [ngClass]="'card text-primary'">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <p [ngClass]="['card', 'text-danger']">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <p [ngClass]="{ card: true, 'text-primary': done }">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <p [ngClass]="{ 'card text-primary p-2': done }">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <p [ngClass]="classes">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <p [ngClass]="classesArr">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <p [ngClass]="classesObj">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quidem?
+  </p>
+
+  <div class="card">
+    <div>
+      <div *ngIf="gender === 'male'">Male</div>
+      <div *ngIf="gender === 'female'">Female</div>
+    </div>
+    <div>
+      <div *ngIf="isIndian && age >= 18">can vote</div>
+      <div *ngIf="!isIndian || age < 18">can't vote</div>
+      <button (click)="changeAge()">Change Age</button><br />
+    </div>
+  </div>
+
+  <div class="card">
+    <div>
+      <div [hidden]="!admin">Welcome you have access</div>
+      <div [hidden]="admin">Sorry!, you dont have access</div>
+      <button (click)="changeAccess()">Change Aceess</button><br />
+    </div>
+  </div>
+</div>
+
+<!-- 
+{{ string interpollation }}
+(event)=""
+(event.filter)=""
+on-event=""
+[property]=""
+[attr.property]=""
+[style.property]=""
+[class.class-name]=""
+#variable
+[ngClass]=""
+[ngStyle]=""
+[(ngModel)]=""
+[hidden]=""
+*ngIf=""
+ -->

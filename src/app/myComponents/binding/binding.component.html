@@ -1,0 +1,68 @@
+<div class="card p-2">
+  <h3 class="h3">{{ title }}</h3>
+  <div class="card">
+    <!-- using string interpolation -->
+    <abbr title="{{ title }}">Ng binding</abbr>
+
+    <!-- here is property binding in angular -->
+    <!-- text content property in DOM -->
+    <a [href]="googleLink"><div [textContent]="linkText"></div></a>
+
+    <!-- here is attribute binding in angular -->
+    <a [attr.href]="facebookLink">Facebook</a>
+
+    <!-- here is style binding in angular -->
+    <p [style.color]="true ? 'red' : 'blue'">hello world</p>
+
+    <!-- here is class binding in angular -->
+    <button [class.btn-danger]="true">bootstrap button</button>
+
+    <!-- this is event binding in angualar -->
+    <button (keyup)="callingByEvent($event)">press any key here</button>
+
+    <!-- this is also event binding in angualar -->
+    <button on-keyup="callingByEvent($event)">press any key here 2</button>
+
+    <!-- this is event filtering in angular -->
+    <button (keyup.enter)="sayHello()">say hello..!</button>
+
+    <!-- bubling prevention -->
+    <div (click)="onDivClicked($event)">
+      <button (click)="onBtnClicked($event)">button</button>
+    </div>
+
+    <!-- template variables -->
+    <input #text (keyup.enter)="getValue(text.value)" type="text" />
+    <button (click)="getValue(text.value)">get value</button>
+
+    <!-- live changes implementation without two way binding -->
+    <input
+      #data
+      (keyup)="updateData(data.value)"
+      type="text"
+      [value]="greeting2"
+    />
+    <div>== {{ greeting2 }}</div>
+
+    <!-- this is two way binding in angular -->
+    <input [(ngModel)]="greeting" type="text" />
+    <div>{{ greeting }}</div>
+  </div>
+</div>
+
+<!-- 
+{{ string interpollation }}
+(event)=""
+(event.filter)=""
+on-event=""
+[property]=""
+[attr.property]=""
+[style.property]=""
+[class.class-name]=""
+#variable
+[ngClass]=""
+[ngStyle]=""
+[(ngModel)]=""
+[hidden]=""
+*ngIf=""
+ -->

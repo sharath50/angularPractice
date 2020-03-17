@@ -1,0 +1,25 @@
+<div class="card">
+  <h3>{{ title }}</h3>
+  <div>
+    {{ fname | uppercase }}
+  </div>
+  <div>
+    {{ lname | lowercase }}
+  </div>
+  <div>
+    {{ fullname | uppercase }}
+  </div>
+  4526.23 | 3.2-3 = 4526.230
+  <div>{{ rating }} --> {{ rating | number: "3.2-2" }}</div>
+  <!-- exp | number : before decimal . after decimal(min - max) -->
+  <div>{{ price }} --> {{ price | currency: "USD":true:"3.2-2" }}</div>
+  <!-- exp | currency : currency name(USD AUD GBP) : to show symbol(true false) : same like above -->
+  <div>
+    {{ iphonePrice }} --> {{ iphonePrice | currency: "INR":true:"3.2-2" }}
+  </div>
+  <div>{{ outing }} --> {{ outing | date: "dd-mm-yyyy" }}</div>
+  <div>
+    {{ heading | summary: 30 }}
+    <!-- this is custom pipe -->
+  </div>
+</div>

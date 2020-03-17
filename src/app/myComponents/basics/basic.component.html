@@ -1,0 +1,13 @@
+<div class="card p-2">
+  <div>welcome to angular {{ title }}</div>
+  <ul>
+    <li *ngFor="let num of numbers">
+      <span> {{ num }} </span>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of pairs">
+      {{ item.name }} : {{ item.place }} : {{ item.role }} :{{ item.pincode }}
+    </li>
+  </ul>
+</div>
